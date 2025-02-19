@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useState } from 'react'
 import {assets} from '../assets/assets'
 import { Link,NavLink } from 'react-router-dom'
@@ -8,11 +8,7 @@ const Navbar = () => {
   const [visible, setVisible] = useState(false)
    return (
     <div className='flex items-center justify-between py-5 font-medium'>
-       <Link to='/'>
-       <img src={assets.logo} className='w-36' alt="" />
-       </Link>
-       
-
+       <img src={assets.logo} className='w-36' alt="" /> 
        <ul className='hidden sm:flex gap-5 text-sm text-gray-700'>
           <NavLink to='/' className='flex flex-col items-center gap-1'>
              <p>HOME</p>

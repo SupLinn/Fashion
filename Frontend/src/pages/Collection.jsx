@@ -1,7 +1,8 @@
 import React from 'react'
 
-export const Collection = () => {
+ const Collection = () => {
   return (
     <div></div>
   )
 }
+export default Collection

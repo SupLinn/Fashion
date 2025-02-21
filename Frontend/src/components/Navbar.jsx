@@ -1,6 +1,6 @@
-import React from 'react'
-import { useState } from 'react'
-import {assets} from '../assets/assets'
+import React,{useContext} from 'react'
+import  {useState}  from 'react'
+import assets from '../assets/assets'
 import { Link,NavLink } from 'react-router-dom'
 
 
@@ -48,7 +48,7 @@ const Navbar = () => {
 
             <Link to='/cart' className='relative'>
                <img src={assets.cart_icon} className='w-5 min-w-5' alt=""/>
-               <p className=' absolute right-[-5px] bottom-[-5px] bg-black w-4 text-center leading-4 rounded-full aspect-square text-white text-[8px]'>10</p>
+               <p className=' absolute right-[-5px] bottom-[-5px] bg-black w-4 text-center leading-4 rounded-full aspect-square text-white text-[8px]'>15</p>
             </Link>
             <img onClick={()=>setVisible(true)} src={assets.menu_icon} alt="" className='w-5 sm:hidden cursor-pointer'/>
        </div>

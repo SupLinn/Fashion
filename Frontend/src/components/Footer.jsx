@@ -14,8 +14,12 @@ const Footer = () => {
                 <p className='text-gray-600'>City, State 12345</p>
                 <p className='text-gray-600'></p>
            </div>
+        </div>
+        <div>
+          <hr />
+          <p className='py-5 text-sm text-center'>Copyright 2025@ fashion.com - All Right Reserved.</p>
         </div>   
-      
+
     </div>
   )
 }

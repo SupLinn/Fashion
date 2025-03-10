@@ -13,7 +13,7 @@ const SearchBox = () => {
            <img className= 'w-4'src = {assets.search_icon} alt ="" />
         </div>
         <img onClick={()=>{setShowSearch(false); setSearch("")}} src={assets.cross_icon} className='inline w-3 cursor-pointer' />
-    </div>
+    </div   >
   ) : null
 }
 

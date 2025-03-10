@@ -27,10 +27,10 @@ const Collections = () => {
         tempProducts = tempProducts.filter( item => subCategory.includes(item.subCategory))
       }
 
-    // if( search.length>0)
-    //     {
-    //       tempProducts = tempProducts.filter( item => item.name.toLowerCase().includes(search.toLowerCase()))
-    //     }  
+    if( search && showSearch)
+        {
+          tempProducts = tempProducts.filter( item => item.name.toLowerCase().includes(search.toLowerCase()))
+        }  
 
     setFilteredProducts(tempProducts)
   }
@@ -54,7 +54,7 @@ const Collections = () => {
   useEffect(() => {
     applyFilters();
     sortProducts();
-  },[category, subCategory, search, products])
+  },[category, subCategory, search, products, showSearch])
 
   useEffect(() => {
     applyFilters();

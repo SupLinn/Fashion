@@ -2,6 +2,7 @@ import React from 'react'
 import { backendUrl } from '../App'
 import axios from 'axios'
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 
 const Login = ({setToken}) => {
 
@@ -13,7 +14,7 @@ const Login = ({setToken}) => {
     // { console.log(backendUrl)
     //   console.log(email, password)
       e.preventDefault();
-      const response = await axios.post(backendUrl+'/api/user/adminLogin', {email, password})
+      const response = await axios.post(backendUrl+'/api/user/admin', {email, password})
       // console.log(response)
       if(response.data.success)
       {
@@ -28,6 +29,7 @@ const Login = ({setToken}) => {
     catch(err)
     {
       console.log(err)
+      toast.err(err.message)
     }
 }
   return (
@@ -37,12 +39,12 @@ const Login = ({setToken}) => {
         <form onSubmit={onSubmitHandler}>
             <div className='mb-3 min-w-72'>
                 <p className='text-sm font-medium text-gray-700 mb-2'>Email Address</p>
-                <input onChange={(e)=>setEmail(e.target.value)} className='rounded-md w-full px-3 py-2 border border-gray-300 outline-none ' type="email" placeholder='your@email.com'/>
+                <input onChange={(e)=>setEmail(e.target.value)} className='rounded-md w-full px-3 py-2 border border-gray-300 outline-none ' type="email" placeholder='your@email.com' required/>
             </div>
 
             <div className='mb-3 min-w-72'>
                 <p className='text-sm font-medium text-gray-700 mb-2'>Password</p>
-                <input onChange={(e)=>setPassword(e.target.value)} className='rounded-md w-full px-3 py-2 border border-gray-300 outline-none ' type="password" placeholder='Enter your password'/>
+                <input onChange={(e)=>setPassword(e.target.value)} className='rounded-md w-full px-3 py-2 border border-gray-300 outline-none ' type="password" placeholder='Enter your password' required/>
             </div>
 
             <button className='mt-2 w-full py-2 px-4 rounded-md text-white bg-black' type="submit">Login</button>

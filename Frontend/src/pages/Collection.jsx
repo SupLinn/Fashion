@@ -27,7 +27,7 @@ const Collections = () => {
         tempProducts = tempProducts.filter( item => subCategory.includes(item.subCategory))
       }
 
-    if( search && showSearch)
+    if( search.length>0)
         {
           tempProducts = tempProducts.filter( item => item.name.toLowerCase().includes(search.toLowerCase()))
         }  
@@ -54,7 +54,7 @@ const Collections = () => {
   useEffect(() => {
     applyFilters();
     sortProducts();
-  },[category, subCategory, search, products, showSearch])
+  },[category, subCategory, search, products])
 
   useEffect(() => {
     applyFilters();
@@ -78,6 +78,7 @@ else{
   setSubCategory([...subCategory, e.target.value])
 }
 }
+
   return (
     <div className='flex flex-col sm:flex-row  gap-1 sm:gap-10 pt-10 border-t'>
 
